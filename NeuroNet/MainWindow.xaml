@@ -1,0 +1,31 @@
+﻿<metro:MetroWindow x:Class="NeuroNet.MainWindow"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                   xmlns:metro="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                   mc:Ignorable="d"
+                   Title="Hopfield Neuronet"
+                   MinHeight="400" Height="500"
+                   MinWidth="600" Width="600"
+                   ResizeMode="CanResizeWithGrip"
+                   DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140" />
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <ListBox x:Name="SourceBox" SelectionMode="Single" SelectionChanged="SourceImageChanged"
+                 HorizontalAlignment="Stretch" Grid.Row="0" Grid.Column="0" />
+
+        <StackPanel Name="SelectedItemContainer" Grid.Row="0" Grid.Column="1"
+                    HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5 0"
+                    MouseLeftButtonUp="TestNeuronet" Cursor="Hand" />
+
+        <ListBox x:Name="ResultBox" SelectionMode="Single" HorizontalAlignment="Stretch"
+                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="2" />
+    </Grid>
+</metro:MetroWindow>
+
