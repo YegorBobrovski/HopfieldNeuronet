@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 namespace NeuroNet
@@ -33,6 +32,8 @@ namespace NeuroNet
 
         private void SourceImageChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (e.AddedItems.Count == 0) return;
+
             var item = e.AddedItems[0] as ListBoxItem;
             var img = item?.Tag as PixelImage;
             if (img == null) return;
